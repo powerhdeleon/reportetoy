@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reporte Toy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1 class="brand">Reporte <span>Toy</span></h1>
+    <button type="button" id="btnSeleccionar" class="btn-principal">
+      <span class="btn-icono" aria-hidden="true">📁</span>
+      Seleccionar carpeta de XML
+    </button>
+    <input type="file" id="inputCarpeta" webkitdirectory multiple hidden>
+  </header>
+
+  <main class="contenido">
+    <section id="estado" class="estado">
+      Selecciona una carpeta con facturas XML del SAT para comenzar.
+    </section>
+
+    <section id="resultado" class="resultado" hidden>
+      <div class="resumen">
+        <div class="tarjeta">
+          <span class="tarjeta-valor" id="totalArchivos">0</span>
+          <span class="tarjeta-etiqueta">Archivos en carpeta</span>
+        </div>
+        <div class="tarjeta">
+          <span class="tarjeta-valor" id="totalFacturas">0</span>
+          <span class="tarjeta-etiqueta">Facturas leídas</span>
+        </div>
+        <div class="tarjeta destacada">
+          <span class="tarjeta-valor" id="sumaSubtotal">$0.00</span>
+          <span class="tarjeta-etiqueta">Suma SubTotal</span>
+        </div>
+        <div class="tarjeta destacada">
+          <span class="tarjeta-valor" id="sumaTotal">$0.00</span>
+          <span class="tarjeta-etiqueta">Suma Total</span>
+        </div>
+      </div>
+
+      <div id="bloqueErrores" class="errores" hidden>
+        <h2>Archivos con problemas</h2>
+        <ul id="listaErrores"></ul>
+      </div>
+
+      <h2 class="titulo-seccion">Facturas</h2>
+      <div class="tabla-contenedor">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Serie-Folio</th>
+              <th>Fecha</th>
+              <th>Emisor</th>
+              <th>Receptor</th>
+              <th>Tipo</th>
+              <th>UUID</th>
+              <th class="num">SubTotal</th>
+              <th class="num">Total</th>
+            </tr>
+          </thead>
+          <tbody id="tablaFacturas"></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="7">Totales</td>
+              <td class="num" id="pieSubtotal"></td>
+              <td class="num" id="pieTotal"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <h2 class="titulo-seccion">Conceptos</h2>
+      <div class="tabla-contenedor">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Serie-Folio</th>
+              <th>Clave Prod/Serv</th>
+              <th>Descripción</th>
+              <th class="num">Cantidad</th>
+              <th>Unidad</th>
+              <th class="num">Valor unitario</th>
+              <th class="num">Importe</th>
+            </tr>
+          </thead>
+          <tbody id="tablaConceptos"></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="7">Total importe de conceptos</td>
+              <td class="num" id="pieImporte"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
