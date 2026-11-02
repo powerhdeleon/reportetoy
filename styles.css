@@ -88,7 +88,7 @@ body {
 }
 
 .tarjeta {
-  flex: 1 1 200px;
+  flex: 1 1 160px;
   display: flex;
   flex-direction: column;
   padding: 1.25rem;
@@ -191,4 +191,159 @@ body {
 .errores ul {
   margin: 0;
   padding-left: 1.25rem;
+}
+
+.retencion {
+  color: #dc2626;
+}
+
+.tarjeta-valor.retencion {
+  color: #dc2626;
+}
+
+.titulo-con-acciones {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.titulo-con-acciones .titulo-seccion {
+  margin: 0;
+}
+
+.btn-secundario {
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4f46e5;
+  background: #fff;
+  border: 1px solid #c7c9f5;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.btn-secundario:hover {
+  background: #eef0fb;
+}
+
+/* ---- Factura con conceptos anidados ---- */
+
+.tabla .col-toggle {
+  width: 2.5rem;
+  padding-right: 0;
+}
+
+.btn-toggle {
+  width: 1.8rem;
+  height: 1.8rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: #4f46e5;
+  background: #eef0fb;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-toggle:hover {
+  background: #dfe2fa;
+}
+
+.tabla tbody.factura > .fila-factura > td {
+  border-top: 2px solid #e2e5f3;
+  font-weight: 500;
+}
+
+.tabla .total {
+  font-weight: 700;
+}
+
+.tabla tbody.factura > .fila-detalle > td {
+  padding: 0 1rem 1rem 3.5rem;
+  background: #fafbff;
+}
+
+.tabla tbody.factura .fila-detalle:hover {
+  background: none;
+}
+
+.tabla tbody.factura.contraida .fila-detalle {
+  display: none;
+}
+
+.detalle {
+  position: relative;
+  padding: 0.75rem 0 0 1rem;
+  border-left: 3px solid #a5a8f0;
+}
+
+.detalle-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.detalle-meta b {
+  color: #4b5563;
+}
+
+.subtabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #e5e7f2;
+  border-radius: 8px;
+  font-size: 0.88rem;
+}
+
+.tabla .subtabla th,
+.tabla .subtabla td {
+  padding: 0.5rem 0.75rem;
+  border-top: none;
+  border-bottom: 1px solid #f0f1f6;
+  font-weight: normal;
+  background: none;
+  vertical-align: top;
+}
+
+.tabla .subtabla th {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #6b7280;
+  background: #f5f6fc;
+}
+
+.tabla .subtabla tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.vacio {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.lista-impuestos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 230px;
+}
+
+.lista-impuestos li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.82rem;
+}
+
+.lista-impuestos .importe {
+  font-variant-numeric: tabular-nums;
+}
+
+.lista-impuestos li.retencion .importe::before {
+  content: "−";
 }
